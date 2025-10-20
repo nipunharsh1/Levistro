@@ -1,7 +1,8 @@
 import './Navigation.css';
 
 function Navigation() {
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (e, sectionId) => {
+    e.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -15,10 +16,10 @@ function Navigation() {
           <h2>LEVISTRO</h2>
         </div>
         <ul className="nav-menu">
-          <li><a onClick={() => scrollToSection('home')}>Home</a></li>
-          <li><a onClick={() => scrollToSection('about')}>About</a></li>
-          <li><a onClick={() => scrollToSection('products')}>Products</a></li>
-          <li><a onClick={() => scrollToSection('contact')}>Contact</a></li>
+          <li><a href="#home" onClick={(e) => scrollToSection(e, 'home')}>Home</a></li>
+          <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>About</a></li>
+          <li><a href="#products" onClick={(e) => scrollToSection(e, 'products')}>Products</a></li>
+          <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>Contact</a></li>
         </ul>
       </div>
     </nav>
