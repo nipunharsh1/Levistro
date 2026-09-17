@@ -1,0 +1,357 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal Abstract Swirl Background */
+.hero-swirl-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.swirl-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Thin curved spiral lines */
+.spiral-line {
+  position: absolute;
+  border: none;
+  background: none;
+  opacity: 0.6;
+}
+
+.spiral-line::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid;
+  border-image: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(59, 130, 246, 0.3) 25%,
+    rgba(20, 184, 166, 0.4) 50%,
+    rgba(16, 185, 129, 0.3) 75%,
+    transparent 100%
+  ) 1;
+  border-radius: 50%;
+  animation: spiralRotate 20s linear infinite;
+}
+
+/* Dark mode visuals */
+.dark .hero-swirl-bg {
+  opacity: 0.7;
+}
+
+.dark .spiral-line::before {
+  border-image: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.25) 25%,
+    rgba(20, 184, 166, 0.18) 50%,
+    rgba(16, 185, 129, 0.12) 75%,
+    transparent 100%
+  ) 1;
+}
+
+.dark .flow-line {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(99, 102, 241, 0.06) 20%,
+    rgba(20, 184, 166, 0.06) 50%,
+    rgba(16, 185, 129, 0.04) 80%,
+    transparent 100%
+  );
+}
+
+.dark .vortex-subtle {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(99, 102, 241, 0.06) 0%,
+    rgba(20, 184, 166, 0.04) 40%,
+    transparent 70%
+  );
+  filter: blur(28px);
+}
+
+.spiral-1 {
+  top: 10%;
+  left: 15%;
+  width: 200px;
+  height: 200px;
+}
+
+.spiral-1::before {
+  animation-delay: 0s;
+}
+
+.spiral-2 {
+  top: 40%;
+  right: 20%;
+  width: 150px;
+  height: 150px;
+}
+
+.spiral-2::before {
+  animation-delay: -7s;
+  animation-direction: reverse;
+}
+
+.spiral-3 {
+  bottom: 25%;
+  left: 25%;
+  width: 120px;
+  height: 120px;
+}
+
+.spiral-3::before {
+  animation-delay: -14s;
+}
+
+/* Flowing curved lines */
+.flow-line {
+  position: absolute;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(59, 130, 246, 0.2) 20%,
+    rgba(20, 184, 166, 0.3) 50%,
+    rgba(16, 185, 129, 0.2) 80%,
+    transparent 100%
+  );
+  border-radius: 1px;
+  animation: lineFlow 12s ease-in-out infinite;
+}
+
+.line-1 {
+  top: 5%;
+  left: 30%;
+  height: 25%;
+  transform: rotate(15deg);
+  animation-delay: 0s;
+}
+
+.line-2 {
+  top: 35%;
+  right: 25%;
+  height: 20%;
+  transform: rotate(-25deg);
+  animation-delay: -4s;
+}
+
+.line-3 {
+  bottom: 15%;
+  left: 60%;
+  height: 18%;
+  transform: rotate(35deg);
+  animation-delay: -8s;
+}
+
+.line-4 {
+  top: 20%;
+  left: 70%;
+  height: 15%;
+  transform: rotate(-10deg);
+  animation-delay: -2s;
+}
+
+/* Abstract curved paths */
+.curve-path {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  border-radius: 50%;
+}
+
+.curve-path::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(20, 184, 166, 0.25);
+  border-radius: 50%;
+  border-style: dashed;
+  border-spacing: 5px;
+  top: -40px;
+  left: -40px;
+  animation: pathFloat 15s ease-in-out infinite;
+}
+
+.path-1 {
+  top: 25%;
+  left: 45%;
+}
+
+.path-1::before {
+  animation-delay: 0s;
+}
+
+.path-2 {
+  top: 60%;
+  right: 35%;
+}
+
+.path-2::before {
+  animation-delay: -5s;
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.path-3 {
+  bottom: 30%;
+  left: 20%;
+}
+
+.path-3::before {
+  animation-delay: -10s;
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+/* Subtle vortex elements */
+.vortex-subtle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(59, 130, 246, 0.08) 0%,
+    rgba(20, 184, 166, 0.06) 40%,
+    transparent 70%
+  );
+  filter: blur(20px);
+  animation: vortexBreath 18s ease-in-out infinite;
+}
+
+.vortex-1 {
+  top: 15%;
+  right: 15%;
+  animation-delay: 0s;
+}
+
+.vortex-2 {
+  bottom: 20%;
+  right: 40%;
+  animation-delay: -6s;
+  background: radial-gradient(
+    circle at 70% 70%,
+    rgba(20, 184, 166, 0.08) 0%,
+    rgba(16, 185, 129, 0.06) 40%,
+    transparent 70%
+  );
+}
+
+/* Animations */
+@keyframes spiralRotate {
+  0% { 
+    transform: rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: rotate(180deg) scale(1.1);
+    opacity: 0.8;
+  }
+  100% { 
+    transform: rotate(360deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes lineFlow {
+  0%, 100% { 
+    opacity: 0.2;
+    transform: translateY(0px) scaleY(1);
+  }
+  50% { 
+    opacity: 0.6;
+    transform: translateY(-5px) scaleY(1.1);
+  }
+}
+
+@keyframes pathFloat {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0.25;
+  }
+  33% { 
+    transform: translateY(-10px) translateX(5px) rotate(120deg);
+    opacity: 0.4;
+  }
+  66% { 
+    transform: translateY(-5px) translateX(-8px) rotate(240deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes vortexBreath {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-swirl-bg {
+    opacity: 0.3;
+  }
+  
+  .spiral-line {
+    opacity: 0.4;
+  }
+  
+  .spiral-1 {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .spiral-2 {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .spiral-3 {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .vortex-subtle {
+    width: 60px;
+    height: 60px;
+    filter: blur(15px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-swirl-bg {
+    opacity: 0.25;
+  }
+  
+  .flow-line {
+    width: 0.5px;
+  }
+  
+  .curve-path::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: -25px;
+  }
+}
