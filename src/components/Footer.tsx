@@ -81,25 +81,25 @@ const Footer: React.FC = () => {
               <span className="text-2xl font-black tracking-tight text-slate-900 dark:text-white">Levistro</span>
             </div>
             <p className="text-sm text-slate-600 dark:text-gray-400 leading-relaxed mb-6 max-w-sm">
-              An elite creative engineering agency delivering bespoke brand systems, 3D WebGL experiences, and high-conversion platforms for global market leaders.
+              A software engineering studio delivering custom enterprise systems, mobile applications, e-commerce platforms, and scalable LMS solutions for modern businesses.
             </p>
             <div className="text-xs text-teal-600 dark:text-teal-400 font-semibold flex items-center gap-2">
               <Sparkles className="w-3.5 h-3.5" />
-              Crafted with uncompromising precision.
+              Engineered with precision & reliability.
             </div>
           </div>
 
           {/* Nav Col 1: Capabilities */}
           <div className="lg:col-span-2">
             <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-4">
-              Capabilities
+              Services
             </h4>
             <ul className="space-y-2.5 text-sm">
-              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Brand Strategy</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Enterprise Systems</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Mobile App Dev</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">E-Commerce Build</a></li>
+              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">LMS Platforms</a></li>
               <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Custom Web Apps</a></li>
-              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">3D & Spatial UI</a></li>
-              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">AI & Performance</a></li>
-              <li><a href="#services" className="hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors">Design Systems</a></li>
             </ul>
           </div>
 
@@ -110,10 +110,10 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li><a href="#portfolio" className="hover:text-teal-600 dark:hover:text-teal-300 transition-colors">Case Studies</a></li>
-              <li><a href="#methodology" className="hover:text-teal-600 dark:hover:text-teal-300 transition-colors">Methodology</a></li>
-              <li><a href="#team" className="hover:text-teal-600 dark:hover:text-teal-300 transition-colors">Leadership</a></li>
+              <li><a href="#methodology" className="hover:text-teal-600 dark:hover:text-teal-300 transition-colors">Our Process</a></li>
+              <li><a href="#team" className="hover:text-teal-600 dark:hover:text-teal-300 transition-colors">Team</a></li>
               <li><a href="#testimonials" className="hover:text-teal-600 dark:hover:text-teal-300 transition-colors">Client Reviews</a></li>
-              <li><a href="#contact" className="hover:text-teal-600 dark:hover:text-teal-300 transition-colors">Direct Inquiry</a></li>
+              <li><a href="#contact" className="hover:text-teal-600 dark:hover:text-teal-300 transition-colors">Get In Touch</a></li>
             </ul>
           </div>
 
@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
               The Levistro Dispatch
             </h4>
             <p className="text-xs text-slate-600 dark:text-gray-400 mb-4 leading-relaxed">
-              Curated strategic insights on brand equity, emerging WebGL tech, and digital product architecture.
+              Curated tech insights on scalable enterprise software, mobile trends, and high-converting e-commerce.
             </p>
             {subscribed ? (
               <div className="p-3.5 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-700 dark:text-teal-300 text-xs font-semibold flex items-center gap-2">

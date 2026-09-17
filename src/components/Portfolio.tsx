@@ -1,118 +1,24 @@
 import React, { useState } from 'react';
-import { ExternalLink, ArrowUpRight, X, Check, Award, TrendingUp, Sparkles } from 'lucide-react';
+import { ArrowUpRight, X, TrendingUp } from 'lucide-react';
+import { PortfolioItem } from '../types/database';
+import { defaultPortfolioItems } from '../data/defaultData';
 
-interface Project {
-  id: number;
-  title: string;
-  client: string;
-  category: 'Branding' | 'Web Platforms' | 'AI & Mobile';
-  metric: string;
-  metricLabel: string;
-  description: string;
-  challenge: string;
-  solution: string;
-  tags: string[];
-  gradient: string;
-  accent: string;
+interface PortfolioProps {
+  items?: PortfolioItem[];
 }
 
-const projects: Project[] = [
-  {
-    id: 1,
-    title: 'Autonomous Fintech Rebrand & Design System',
-    client: 'Apex Innovations',
-    category: 'Branding',
-    metric: '+340%',
-    metricLabel: 'Inbound Enterprise Pipeline',
-    description: 'Complete strategic repositioning, global brand identity, and multi-tier design tokens for a $200M autonomous fintech platform.',
-    challenge: 'Apex was perceived as a generic payment gateway rather than an intelligent algorithmic financial operating system.',
-    solution: 'Engineered a monolithic, high-contrast visual system featuring 3D dynamic asset tokens and an executive brand narrative.',
-    tags: ['Brand Identity', '3D Design Tokens', 'Visual Architecture', 'Styleguide'],
-    gradient: 'from-blue-600 via-indigo-700 to-slate-900',
-    accent: 'text-cyan-400',
-  },
-  {
-    id: 2,
-    title: 'Hyperscale Cloud Platform & Developer Hub',
-    client: 'Solaria Cloud',
-    category: 'Web Platforms',
-    metric: '0.38s',
-    metricLabel: 'Global Page Load Time',
-    description: 'Engineered a lightning-fast web infrastructure and interactive developer documentation with real-time WebGL server telemetry.',
-    challenge: 'Complex server analytics led to 65% drop-off in the developer onboarding funnel.',
-    solution: 'Re-architected with Vite, React, and WebGL visualizations, cutting developer onboarding friction by 48%.',
-    tags: ['React', 'TypeScript', 'WebGL Visuals', 'Tailwind', 'Edge CDN'],
-    gradient: 'from-teal-600 via-cyan-800 to-slate-900',
-    accent: 'text-teal-400',
-  },
-  {
-    id: 3,
-    title: 'AI Medical Diagnostics Assistant Interface',
-    client: 'Vanguard Health',
-    category: 'AI & Mobile',
-    metric: '99.8%',
-    metricLabel: 'Physician Accuracy Rate',
-    description: 'Human-centric UI/UX design for real-time generative AI clinical decision support systems deployed across 40+ hospitals.',
-    challenge: 'Physicians experienced extreme cognitive overload from dense unorganized raw diagnostic records.',
-    solution: 'Designed an ergonomic clinical workspace with instant AI summaries, confidence scoring chips, and dark-room medical UI.',
-    tags: ['AI/ML Interface', 'Ergonomic UX', 'Healthcare DS', 'Mobile Tablet'],
-    gradient: 'from-emerald-600 via-teal-800 to-slate-900',
-    accent: 'text-emerald-400',
-  },
-  {
-    id: 4,
-    title: 'Decentralized Liquidity Protocol Portal',
-    client: 'Orion Protocol',
-    category: 'Web Platforms',
-    metric: '$1.4B',
-    metricLabel: 'Total Value Locked in 90 Days',
-    description: 'Sleek, friction-free decentralized exchange terminal featuring sub-second swap execution and 3D kinetic token visualizations.',
-    challenge: 'DeFi protocols often suffer from intimidating, confusing cryptographic parameters and high abandonment.',
-    solution: 'Crafted a consumer-grade trading experience with seamless wallet integration and tactile micro-interactions.',
-    tags: ['Web3 Terminal', 'Interactive 3D', 'Next.js', 'Fintech UI'],
-    gradient: 'from-indigo-600 via-purple-800 to-slate-900',
-    accent: 'text-indigo-400',
-  },
-  {
-    id: 5,
-    title: 'Luxury EV Digital Showroom & Configurator',
-    client: 'Nova Mobility',
-    category: 'AI & Mobile',
-    metric: '4.2x',
-    metricLabel: 'Pre-Order Conversion Lift',
-    description: 'Photorealistic WebGL vehicle configurator allowing high-net-worth buyers to customize bespoke interior trims and paints in real-time.',
-    challenge: 'Traditional static car brochures failed to convey bespoke luxury craftsmanship for a $140K EV.',
-    solution: 'Built an in-browser 60FPS 3D configurator with studio lighting presets and seamless order reservation.',
-    tags: ['3D WebGL Configurator', 'Interactive Motion', 'Luxury E-Commerce'],
-    gradient: 'from-slate-700 via-cyan-900 to-black',
-    accent: 'text-cyan-300',
-  },
-  {
-    id: 6,
-    title: 'Global Rebrand for Venture Fund',
-    client: 'Hyperion Capital',
-    category: 'Branding',
-    metric: '$450M',
-    metricLabel: 'New LP Capital Closed',
-    description: 'Executive digital presence and comprehensive brand guidelines for a Silicon Valley tier-1 deep tech investment firm.',
-    challenge: 'Needed to stand out among legacy institutional venture firms to attract AI and quantum computing founders.',
-    solution: 'Crafted an avant-garde editorial typography system paired with dynamic portfolio performance dashboards.',
-    tags: ['Editorial Branding', 'Executive Web Presence', 'Content Strategy'],
-    gradient: 'from-violet-600 via-blue-900 to-slate-950',
-    accent: 'text-violet-400',
-  },
-];
-
-const Portfolio: React.FC = () => {
+const Portfolio: React.FC<PortfolioProps> = ({ items = defaultPortfolioItems }) => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
 
-  const categories = ['All', 'Branding', 'Web Platforms', 'AI & Mobile'];
+  const displayItems = items.length > 0 ? items : defaultPortfolioItems;
+
+  const categories = ['All', ...Array.from(new Set(displayItems.map((p) => p.category)))];
 
   const filteredProjects =
     activeCategory === 'All'
-      ? projects
-      : projects.filter((p) => p.category === activeCategory);
+      ? displayItems
+      : displayItems.filter((p) => p.category === activeCategory);
 
   return (
     <section id="portfolio" className="py-28 bg-slate-50 dark:bg-[#07090E] relative overflow-hidden transition-colors duration-300">
@@ -137,10 +43,11 @@ const Portfolio: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${activeCategory === cat
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
+                  activeCategory === cat
                     ? 'bg-gradient-to-r from-cyan-500 to-teal-500 text-white shadow-glow-cyan'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 dark:text-gray-400 dark:hover:text-white dark:hover:bg-white/5'
-                  }`}
+                }`}
               >
                 {cat}
               </button>
@@ -157,7 +64,7 @@ const Portfolio: React.FC = () => {
               className="group relative rounded-3xl overflow-hidden glass-panel border border-slate-200 dark:border-white/10 hover:border-cyan-500/40 shadow-sm dark:shadow-none transition-all duration-300 hover:-translate-y-2 cursor-pointer flex flex-col justify-between"
             >
               {/* Card Visual Hero Area */}
-              <div className={`h-60 bg-gradient-to-br ${project.gradient} relative p-6 flex flex-col justify-between overflow-hidden`}>
+              <div className={`h-60 bg-gradient-to-br ${project.gradient || 'from-blue-600 via-indigo-700 to-slate-900'} relative p-6 flex flex-col justify-between overflow-hidden`}>
                 {/* Visual Grid / Tech Mesh Overlay */}
                 <div className="absolute inset-0 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] opacity-15" />
 
@@ -251,22 +158,26 @@ const Portfolio: React.FC = () => {
 
             {/* Deep-Dive Case Study Narrative */}
             <div className="space-y-4 text-sm text-slate-600 dark:text-gray-300 mb-6">
-              <div>
-                <h4 className="font-bold text-xs uppercase tracking-wider mb-1 text-teal-600 dark:text-teal-400">
-                  The Challenge
-                </h4>
-                <p className="leading-relaxed bg-slate-50 dark:bg-white/[0.02] p-3.5 rounded-xl border border-slate-200 dark:border-white/5">
-                  {selectedProject.challenge}
-                </p>
-              </div>
-              <div>
-                <h4 className="font-bold text-xs uppercase tracking-wider mb-1 text-cyan-600 dark:text-cyan-400">
-                  Our Strategic Execution
-                </h4>
-                <p className="leading-relaxed bg-slate-50 dark:bg-white/[0.02] p-3.5 rounded-xl border border-slate-200 dark:border-white/5">
-                  {selectedProject.solution}
-                </p>
-              </div>
+              {selectedProject.challenge && (
+                <div>
+                  <h4 className="font-bold text-xs uppercase tracking-wider mb-1 text-teal-600 dark:text-teal-400">
+                    The Challenge
+                  </h4>
+                  <p className="leading-relaxed bg-slate-50 dark:bg-white/[0.02] p-3.5 rounded-xl border border-slate-200 dark:border-white/5">
+                    {selectedProject.challenge}
+                  </p>
+                </div>
+              )}
+              {selectedProject.solution && (
+                <div>
+                  <h4 className="font-bold text-xs uppercase tracking-wider mb-1 text-cyan-600 dark:text-cyan-400">
+                    Our Strategic Execution
+                  </h4>
+                  <p className="leading-relaxed bg-slate-50 dark:bg-white/[0.02] p-3.5 rounded-xl border border-slate-200 dark:border-white/5">
+                    {selectedProject.solution}
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Tech Stack Tags */}

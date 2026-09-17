@@ -89,21 +89,21 @@ const Hero: React.FC<HeroProps> = ({ darkMode = true, onOpenContact }) => {
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-teal-500" />
           </span>
           <span className="text-xs font-semibold uppercase tracking-widest text-teal-600 dark:text-cyan-300">
-            Available for Q3/Q4 Strategic Partnerships
+            Available for New Projects & Contracts
           </span>
         </div>
 
         {/* High-Impact Main Headline */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.08] max-w-5xl mb-6">
-          Elevate Your Brand{' '}
+          Enterprise Systems, Mobile Apps &{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-400 to-indigo-600 dark:from-cyan-400 dark:via-teal-300 dark:to-indigo-400">
-            Into The Future
+            Web Platforms
           </span>
         </h1>
 
         {/* Value Proposition Description */}
         <p className="text-lg sm:text-xl text-slate-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-          We engineer category-defining brand identities, high-craft digital experiences, and high-velocity growth engines for ambitious global visionaries.
+          We build custom enterprise software, iOS & Android mobile apps, high-converting e-commerce stores, and scalable LMS platforms tailored for business growth.
         </p>
 
         {/* Dual Primary & Secondary Action CTAs */}
@@ -113,7 +113,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode = true, onOpenContact }) => {
             className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-white bg-gradient-to-r from-cyan-500 via-teal-500 to-indigo-600 shadow-glow-cyan hover:shadow-glow-teal hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 group"
           >
             <Sparkles className="w-5 h-5 text-cyan-200" />
-            Launch Your Vision
+            Start Your Project
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
 
@@ -121,7 +121,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode = true, onOpenContact }) => {
             href="#portfolio"
             className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-slate-700 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white bg-white hover:bg-slate-100 dark:bg-white/[0.04] dark:hover:bg-white/[0.08] border border-slate-200 dark:border-white/10 backdrop-blur-md shadow-sm dark:shadow-none transition-all duration-200 flex items-center justify-center gap-2"
           >
-            Explore Case Studies
+            View Case Studies
           </a>
         </div>
 
@@ -139,7 +139,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode = true, onOpenContact }) => {
                   AVG
                 </span>
               </div>
-              <p className="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Average Client Growth</p>
+              <p className="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Average Client Efficiency Gain</p>
             </div>
           </div>
 
@@ -150,9 +150,9 @@ const Hero: React.FC<HeroProps> = ({ darkMode = true, onOpenContact }) => {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-2xl font-black text-slate-900 dark:text-white">$48M+</span>
+                <span className="text-2xl font-black text-slate-900 dark:text-white">50+</span>
               </div>
-              <p className="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Client Revenue Unlocked</p>
+              <p className="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Digital Systems Delivered</p>
             </div>
           </div>
 
@@ -163,12 +163,12 @@ const Hero: React.FC<HeroProps> = ({ darkMode = true, onOpenContact }) => {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-2xl font-black text-slate-900 dark:text-white">99.4%</span>
+                <span className="text-2xl font-black text-slate-900 dark:text-white">99.8%</span>
                 <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 border border-indigo-500/30">
                   5★
                 </span>
               </div>
-              <p className="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Client Satisfaction Score</p>
+              <p className="text-xs text-slate-500 dark:text-gray-400 mt-0.5">Client Satisfaction & Delivery</p>
             </div>
           </div>
         </div>

@@ -5,40 +5,40 @@ const steps = [
   {
     step: '01',
     icon: Compass,
-    title: 'Insight & Architecture',
+    title: 'Discovery & Planning',
     description:
-      'We deconstruct your competitive landscape, interview key stakeholders, and engineer a bulletproof technical and visual roadmap before writing a single line of code.',
-    deliverable: 'Strategic Blueprint & Information Architecture',
+      'We define your system requirements, user workflows, and technical architecture to ensure complete project clarity and realistic milestones.',
+    deliverable: 'Project Scope & Architecture Roadmap',
     accent: 'text-cyan-400',
     borderGlow: 'hover:border-cyan-500/40',
   },
   {
     step: '02',
     icon: Sparkles,
-    title: 'High-Craft Design',
+    title: 'UI/UX & System Design',
     description:
-      'We sculpt iconic brand identities, fluid UI motion choreographies, and design systems that establish immediate luxury and trust.',
-    deliverable: 'Interactive Prototypes & Multi-Tier Design Tokens',
+      'We design clean, modern mobile and web interfaces with clickable prototypes and database schemas tailored for your team and users.',
+    deliverable: 'Interactive Prototypes & Wireframes',
     accent: 'text-teal-400',
     borderGlow: 'hover:border-teal-500/40',
   },
   {
     step: '03',
     icon: Layers,
-    title: 'Precision Engineering',
+    title: 'Full-Stack Development',
     description:
-      'We bring designs to life with enterprise-grade React, TypeScript, WebGL shaders, and headless infrastructures built for sub-second execution.',
-    deliverable: 'Production-Grade, Ultra-Fast Web App',
+      'We build your platform using robust, modern technologies (React, Node, Mobile, PostgreSQL, APIs) engineered for high speed, reliability, and security.',
+    deliverable: 'Production-Ready Application',
     accent: 'text-indigo-400',
     borderGlow: 'hover:border-indigo-500/40',
   },
   {
     step: '04',
     icon: Rocket,
-    title: 'Exponential Scale',
+    title: 'Testing & Cloud Launch',
     description:
-      'We calibrate conversion funnels, deploy intelligent automation, and track analytics to guarantee continuous revenue acceleration.',
-    deliverable: 'Performance Analytics & Growth Optimization',
+      'We perform thorough cross-device quality assurance, optimize database performance, deploy your software to secure cloud hosting, and provide warranty support.',
+    deliverable: 'Live Cloud Launch & Support Plan',
     accent: 'text-sky-400',
     borderGlow: 'hover:border-sky-500/40',
   },
@@ -51,16 +51,16 @@ const Methodology: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider mb-4">
-            The Levistro Formula
+            Our Process
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight mb-6">
-            A Repeatable Framework for <br />
+            How We Build & Deliver <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-400 to-indigo-600 dark:from-cyan-400 dark:via-teal-300 dark:to-indigo-400">
-              Unfair Market Advantage
+              Your Digital Systems
             </span>
           </h2>
           <p className="text-slate-600 dark:text-gray-400 text-base leading-relaxed">
-            Eliminating guesswork with a scientific fusion of creative intuition and rigorous technical execution.
+            A clear, transparent 4-step framework from initial consultation to production launch.
           </p>
         </div>
 
