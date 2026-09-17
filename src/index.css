@@ -37,14 +37,12 @@
   height: 100%;
   background: transparent;
   border: 1px solid;
-  border-image: linear-gradient(
-    45deg,
-    transparent 0%,
-    rgba(59, 130, 246, 0.3) 25%,
-    rgba(20, 184, 166, 0.4) 50%,
-    rgba(16, 185, 129, 0.3) 75%,
-    transparent 100%
-  ) 1;
+  border-image: linear-gradient(45deg,
+      transparent 0%,
+      rgba(59, 130, 246, 0.3) 25%,
+      rgba(20, 184, 166, 0.4) 50%,
+      rgba(16, 185, 129, 0.3) 75%,
+      transparent 100%) 1;
   border-radius: 50%;
   animation: spiralRotate 20s linear infinite;
 }
@@ -55,34 +53,28 @@
 }
 
 .dark .spiral-line::before {
-  border-image: linear-gradient(
-    45deg,
-    transparent 0%,
-    rgba(99, 102, 241, 0.25) 25%,
-    rgba(20, 184, 166, 0.18) 50%,
-    rgba(16, 185, 129, 0.12) 75%,
-    transparent 100%
-  ) 1;
+  border-image: linear-gradient(45deg,
+      transparent 0%,
+      rgba(99, 102, 241, 0.25) 25%,
+      rgba(20, 184, 166, 0.18) 50%,
+      rgba(16, 185, 129, 0.12) 75%,
+      transparent 100%) 1;
 }
 
 .dark .flow-line {
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(99, 102, 241, 0.06) 20%,
-    rgba(20, 184, 166, 0.06) 50%,
-    rgba(16, 185, 129, 0.04) 80%,
-    transparent 100%
-  );
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(99, 102, 241, 0.06) 20%,
+      rgba(20, 184, 166, 0.06) 50%,
+      rgba(16, 185, 129, 0.04) 80%,
+      transparent 100%);
 }
 
 .dark .vortex-subtle {
-  background: radial-gradient(
-    circle at 30% 30%,
-    rgba(99, 102, 241, 0.06) 0%,
-    rgba(20, 184, 166, 0.04) 40%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at 30% 30%,
+      rgba(99, 102, 241, 0.06) 0%,
+      rgba(20, 184, 166, 0.04) 40%,
+      transparent 70%);
   filter: blur(28px);
 }
 
@@ -124,14 +116,12 @@
 .flow-line {
   position: absolute;
   width: 1px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(59, 130, 246, 0.2) 20%,
-    rgba(20, 184, 166, 0.3) 50%,
-    rgba(16, 185, 129, 0.2) 80%,
-    transparent 100%
-  );
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(59, 130, 246, 0.2) 20%,
+      rgba(20, 184, 166, 0.3) 50%,
+      rgba(16, 185, 129, 0.2) 80%,
+      transparent 100%);
   border-radius: 1px;
   animation: lineFlow 12s ease-in-out infinite;
 }
@@ -226,12 +216,10 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 30% 30%,
-    rgba(59, 130, 246, 0.08) 0%,
-    rgba(20, 184, 166, 0.06) 40%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at 30% 30%,
+      rgba(59, 130, 246, 0.08) 0%,
+      rgba(20, 184, 166, 0.06) 40%,
+      transparent 70%);
   filter: blur(20px);
   animation: vortexBreath 18s ease-in-out infinite;
 }
@@ -246,62 +234,72 @@
   bottom: 20%;
   right: 40%;
   animation-delay: -6s;
-  background: radial-gradient(
-    circle at 70% 70%,
-    rgba(20, 184, 166, 0.08) 0%,
-    rgba(16, 185, 129, 0.06) 40%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at 70% 70%,
+      rgba(20, 184, 166, 0.08) 0%,
+      rgba(16, 185, 129, 0.06) 40%,
+      transparent 70%);
 }
 
 /* Animations */
 @keyframes spiralRotate {
-  0% { 
+  0% {
     transform: rotate(0deg) scale(1);
     opacity: 0.6;
   }
-  50% { 
+
+  50% {
     transform: rotate(180deg) scale(1.1);
     opacity: 0.8;
   }
-  100% { 
+
+  100% {
     transform: rotate(360deg) scale(1);
     opacity: 0.6;
   }
 }
 
 @keyframes lineFlow {
-  0%, 100% { 
+
+  0%,
+  100% {
     opacity: 0.2;
     transform: translateY(0px) scaleY(1);
   }
-  50% { 
+
+  50% {
     opacity: 0.6;
     transform: translateY(-5px) scaleY(1.1);
   }
 }
 
 @keyframes pathFloat {
-  0%, 100% { 
+
+  0%,
+  100% {
     transform: translateY(0px) translateX(0px) rotate(0deg);
     opacity: 0.25;
   }
-  33% { 
+
+  33% {
     transform: translateY(-10px) translateX(5px) rotate(120deg);
     opacity: 0.4;
   }
-  66% { 
+
+  66% {
     transform: translateY(-5px) translateX(-8px) rotate(240deg);
     opacity: 0.3;
   }
 }
 
 @keyframes vortexBreath {
-  0%, 100% { 
+
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.6;
   }
-  50% { 
+
+  50% {
     transform: scale(1.2);
     opacity: 0.8;
   }
@@ -312,26 +310,26 @@
   .hero-swirl-bg {
     opacity: 0.3;
   }
-  
+
   .spiral-line {
     opacity: 0.4;
   }
-  
+
   .spiral-1 {
     width: 120px;
     height: 120px;
   }
-  
+
   .spiral-2 {
     width: 100px;
     height: 100px;
   }
-  
+
   .spiral-3 {
     width: 80px;
     height: 80px;
   }
-  
+
   .vortex-subtle {
     width: 60px;
     height: 60px;
@@ -343,11 +341,11 @@
   .hero-swirl-bg {
     opacity: 0.25;
   }
-  
+
   .flow-line {
     width: 0.5px;
   }
-  
+
   .curve-path::before {
     width: 50px;
     height: 50px;
@@ -365,53 +363,81 @@ html {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-track {
   background: #07090e;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #cbd5e1;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #334155;
 }
 
 /* Glassmorphism primitives */
 .glass-panel {
-  background: rgba(15, 20, 32, 0.65);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 20, 32, 0.65);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
 }
 
 .glass-panel-light {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
 .glass-nav {
-  background: rgba(7, 9, 14, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dark .glass-nav {
+  background: rgba(7, 9, 14, 0.85);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-card-hover {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .glass-card-hover:hover {
   transform: translateY(-4px);
-  border-color: rgba(6, 182, 212, 0.3);
-  box-shadow: 0 16px 32px -8px rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 16px 32px -8px rgba(6, 182, 212, 0.18);
 }
 
 /* Radial ambient light glow */
 .ambient-glow-cyan {
-  background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.15) 0%, transparent 60%);
+  background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.12) 0%, transparent 60%);
 }
 
 .ambient-glow-indigo {
-  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.12) 0%, transparent 60%);
-}
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 60%);
+}

@@ -30,11 +30,10 @@ const Header: React.FC<HeaderProps> = ({ darkMode, setDarkMode, onOpenContact })
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'py-3.5 bg-[#07090E]/85 dark:bg-[#07090E]/90 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+          ? 'py-3.5 bg-white/85 dark:bg-[#07090E]/90 backdrop-blur-xl border-b border-slate-200/80 dark:border-white/10 shadow-lg shadow-slate-900/5 dark:shadow-black/20'
           : 'py-5 bg-transparent'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Mark */}
@@ -42,26 +41,26 @@ const Header: React.FC<HeaderProps> = ({ darkMode, setDarkMode, onOpenContact })
           <img
             src={logo}
             alt="Levistro logo"
-            className="h-10 w-auto object-contain drop-shadow-[0_0_8px_rgba(6,182,212,0.5)] transition-transform group-hover:scale-105 duration-300"
+            className="h-10 w-auto object-contain drop-shadow-[0_0_8px_rgba(6,182,212,0.4)] transition-transform group-hover:scale-105 duration-300"
           />
           <div className="flex flex-col">
-            <span className="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
+            <span className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
               Levistro
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
             </span>
-            <span className="text-[10px] uppercase font-semibold tracking-widest text-teal-400/80 -mt-0.5">
+            <span className="text-[10px] uppercase font-semibold tracking-widest text-teal-600 dark:text-teal-400/80 -mt-0.5">
               Creative Agency
             </span>
           </div>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 bg-white/5 dark:bg-white/[0.04] px-4 py-1.5 rounded-full border border-white/10 backdrop-blur-md">
+        <nav className="hidden md:flex items-center gap-1 bg-slate-100/80 dark:bg-white/[0.04] px-4 py-1.5 rounded-full border border-slate-200/80 dark:border-white/10 backdrop-blur-md">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="px-4 py-1.5 text-sm font-medium text-gray-300 hover:text-white rounded-full hover:bg-white/10 transition-all duration-200"
+              className="px-4 py-1.5 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white rounded-full hover:bg-slate-200/60 dark:hover:bg-white/10 transition-all duration-200"
             >
               {link.name}
             </a>
@@ -73,9 +72,10 @@ const Header: React.FC<HeaderProps> = ({ darkMode, setDarkMode, onOpenContact })
           <button
             onClick={() => setDarkMode(!darkMode)}
             aria-label="Toggle theme"
-            className="p-2.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-all duration-200"
+            className="p-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 text-slate-700 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-all duration-200"
+            title={darkMode ? 'Switch to Light theme' : 'Switch to Dark theme'}
           >
-            {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-cyan-300" />}
+            {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-600" />}
           </button>
 
           <button
@@ -98,14 +98,14 @@ const Header: React.FC<HeaderProps> = ({ darkMode, setDarkMode, onOpenContact })
           <button
             onClick={() => setDarkMode(!darkMode)}
             aria-label="Toggle theme"
-            className="p-2 rounded-lg border border-white/10 bg-white/5 text-gray-300"
+            className="p-2 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-gray-300"
           >
-            {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-cyan-300" />}
+            {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-600" />}
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Open menu"
-            className="p-2 rounded-lg border border-white/10 bg-white/5 text-white"
+            className="p-2 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-800 dark:text-white"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -114,19 +114,19 @@ const Header: React.FC<HeaderProps> = ({ darkMode, setDarkMode, onOpenContact })
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden px-4 pt-4 pb-6 bg-[#07090E]/95 backdrop-blur-2xl border-b border-white/10 mt-3 animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="md:hidden px-4 pt-4 pb-6 bg-white/95 dark:bg-[#07090E]/95 backdrop-blur-2xl border-b border-slate-200 dark:border-white/10 mt-3 animate-in fade-in slide-in-from-top-4 duration-200 shadow-xl">
           <nav className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2.5 rounded-lg text-base font-medium text-gray-200 hover:bg-white/10 hover:text-white transition-colors"
+                className="px-4 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 dark:text-gray-200 dark:hover:bg-white/10 dark:hover:text-white transition-colors"
               >
                 {link.name}
               </a>
             ))}
-            <div className="pt-3 border-t border-white/10 mt-2">
+            <div className="pt-3 border-t border-slate-200 dark:border-white/10 mt-2">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);

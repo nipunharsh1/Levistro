@@ -39,20 +39,20 @@ const testimonials = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-28 bg-[#07090E] relative overflow-hidden">
+    <section id="testimonials" className="py-28 bg-white dark:bg-[#07090E] relative overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-bold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-bold uppercase tracking-wider mb-4">
             Executive Validation
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
             Trusted by Leaders <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500 dark:from-cyan-400 dark:to-teal-300">
               Shaping Tomorrow
             </span>
           </h2>
-          <p className="text-gray-400 text-sm sm:text-base">
+          <p className="text-slate-600 dark:text-gray-400 text-sm sm:text-base">
             Read how category leaders scaled their valuation and client trust with Levistro.
           </p>
         </div>
@@ -62,7 +62,7 @@ const Testimonials: React.FC = () => {
           {testimonials.map((item) => (
             <div
               key={item.id}
-              className="group relative rounded-3xl p-8 glass-panel border border-white/10 hover:border-teal-500/40 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between"
+              className="group relative rounded-3xl p-8 glass-panel border border-slate-200 dark:border-white/10 hover:border-teal-500/40 shadow-sm dark:shadow-none transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between"
             >
               <div>
                 {/* 5 Stars + Quote Icon */}
@@ -72,17 +72,17 @@ const Testimonials: React.FC = () => {
                       <Star key={i} className="w-4 h-4 fill-amber-400" />
                     ))}
                   </div>
-                  <Quote className="w-8 h-8 text-white/10 group-hover:text-cyan-400/20 transition-colors" />
+                  <Quote className="w-8 h-8 text-slate-200 group-hover:text-cyan-500/30 dark:text-white/10 dark:group-hover:text-cyan-400/20 transition-colors" />
                 </div>
 
                 {/* Quote Text */}
-                <p className="text-sm text-gray-300 leading-relaxed italic mb-8">
+                <p className="text-sm text-slate-700 dark:text-gray-300 leading-relaxed italic mb-8">
                   "{item.quote}"
                 </p>
               </div>
 
               {/* Author Info + Impact Pill */}
-              <div className="pt-6 border-t border-white/5">
+              <div className="pt-6 border-t border-slate-200 dark:border-white/5">
                 <div className="flex items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
                     <div
@@ -91,13 +91,13 @@ const Testimonials: React.FC = () => {
                       {item.avatar}
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-white leading-snug">{item.author}</h4>
-                      <p className="text-[11px] text-gray-400">
-                        {item.role}, <span className="text-gray-300 font-medium">{item.company}</span>
+                      <h4 className="text-sm font-bold text-slate-900 dark:text-white leading-snug">{item.author}</h4>
+                      <p className="text-[11px] text-slate-500 dark:text-gray-400">
+                        {item.role}, <span className="text-slate-700 dark:text-gray-300 font-medium">{item.company}</span>
                       </p>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-teal-500/10 border border-teal-500/20 text-teal-300 shrink-0">
+                  <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-teal-500/10 border border-teal-500/20 text-teal-700 dark:text-teal-300 shrink-0">
                     {item.metrics}
                   </span>
                 </div>
