@@ -111,8 +111,8 @@ function App() {
         {/* 5. 4-Step Working Methodology */}
         <Methodology />
 
-        {/* 6. Creative Leadership Team (Hidden for now) */}
-        {/* <Team /> */}
+        {/* 6. Agency Leadership Spotlight */}
+        <Team />
 
         {/* 7. Executive Client Testimonials */}
         <Testimonials />

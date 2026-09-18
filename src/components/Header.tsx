@@ -24,6 +24,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, setDarkMode, onOpenContact })
     { name: 'Services', href: '#services' },
     { name: 'Work', href: '#portfolio' },
     { name: 'Methodology', href: '#methodology' },
+    { name: 'Team', href: '#team' },
     { name: 'Testimonials', href: '#testimonials' },
   ];
 

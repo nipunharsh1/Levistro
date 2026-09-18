@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUp, ArrowRight, Check, Globe, Mail, Sparkles } from 'lucide-react';
+import logo from './logo.png';
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -71,21 +72,27 @@ const Footer: React.FC = () => {
           {/* Brand Col */}
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-teal-400 to-indigo-500 p-[1px]">
-                <div className="w-full h-full bg-white dark:bg-[#07090E] rounded-[11px] flex items-center justify-center">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500 dark:from-cyan-400 dark:to-teal-300 font-extrabold text-base">
-                    L
-                  </span>
-                </div>
+              <img
+                src={logo}
+                alt="Levistro logo"
+                className="h-10 w-auto object-contain drop-shadow-[0_0_8px_rgba(6,182,212,0.4)]"
+              />
+              <div className="flex flex-col">
+                <span className="text-2xl font-black tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
+                  Levistro
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
+                </span>
+                <span className="text-[10px] uppercase font-semibold tracking-widest text-teal-600 dark:text-teal-400/80 -mt-0.5">
+                  Creative Agency
+                </span>
               </div>
-              <span className="text-2xl font-black tracking-tight text-slate-900 dark:text-white">Levistro</span>
             </div>
             <p className="text-sm text-slate-600 dark:text-gray-400 leading-relaxed mb-6 max-w-sm">
-              A software engineering studio delivering custom enterprise systems, mobile applications, e-commerce platforms, and scalable LMS solutions for modern businesses.
+              A full-service digital and creative agency delivering custom software, mobile apps, video editing, commercial photography, and high-converting paid ad campaigns.
             </p>
             <div className="text-xs text-teal-600 dark:text-teal-400 font-semibold flex items-center gap-2">
               <Sparkles className="w-3.5 h-3.5" />
-              Engineered with precision & reliability.
+              Engineered with precision & craft.
             </div>
           </div>
 
@@ -111,6 +118,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-sm">
               <li><a href="#portfolio" className="hover:text-teal-600 dark:hover:text-teal-300 transition-colors">Case Studies</a></li>
               <li><a href="#methodology" className="hover:text-teal-600 dark:hover:text-teal-300 transition-colors">Our Process</a></li>
+              <li><a href="#team" className="hover:text-teal-600 dark:hover:text-teal-300 transition-colors">Team</a></li>
               <li><a href="#testimonials" className="hover:text-teal-600 dark:hover:text-teal-300 transition-colors">Client Reviews</a></li>
               <li><a href="#contact" className="hover:text-teal-600 dark:hover:text-teal-300 transition-colors">Get In Touch</a></li>
             </ul>
