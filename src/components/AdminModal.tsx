@@ -424,7 +424,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({
                         />
                       </div>
                       <div>
-                        <label className="text-xs text-gray-400">Icon Name (Palette, Code2, Box, Cpu)</label>
+                        <label className="text-xs text-gray-400">Icon Name (Palette, Code2, Video, Camera, Megaphone, Server)</label>
                         <input
                           type="text"
                           value={editingService.iconName || 'Code2'}

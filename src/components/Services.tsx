@@ -1,5 +1,24 @@
 import React from 'react';
-import { Server, Smartphone, ShoppingCart, GraduationCap, Palette, Code2, Box, Cpu, ArrowUpRight, CheckCircle2, HelpCircle } from 'lucide-react';
+import {
+  Server,
+  Smartphone,
+  ShoppingCart,
+  GraduationCap,
+  Palette,
+  Code2,
+  Box,
+  Cpu,
+  ArrowUpRight,
+  CheckCircle2,
+  HelpCircle,
+  Video,
+  Film,
+  Camera,
+  Megaphone,
+  Target,
+  Sparkles,
+  Share2,
+} from 'lucide-react';
 import { ServiceItem } from '../types/database';
 import { defaultServiceItems } from '../data/defaultData';
 
@@ -17,6 +36,13 @@ const iconMap: Record<string, any> = {
   Code2,
   Box,
   Cpu,
+  Video,
+  Film,
+  Camera,
+  Megaphone,
+  Target,
+  Sparkles,
+  Share2,
 };
 
 const Services: React.FC<ServicesProps> = ({ items = defaultServiceItems, onSelectService }) => {
@@ -33,31 +59,35 @@ const Services: React.FC<ServicesProps> = ({ items = defaultServiceItems, onSele
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider mb-4">
-              What We Build
+              What We Deliver
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-              High-Impact Software <br />
+              High-Impact Digital Solutions <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-teal-400 to-indigo-600 dark:from-cyan-400 dark:via-teal-300 dark:to-indigo-400">
                 Built For Real Business Growth
               </span>
             </h2>
           </div>
           <p className="text-slate-600 dark:text-gray-400 max-w-md text-base leading-relaxed">
-            From enterprise cloud systems to consumer mobile apps, online stores, and LMS platforms, we deliver reliable software that drives revenue.
+            From custom web platforms and mobile apps to viral reels, commercial photography, and high-converting ad campaigns — we engineer scalable growth.
           </p>
         </div>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {displayItems.map((item) => {
-            const Icon = iconMap[item.iconName] || Code2;
+            const itemAny = item as any;
+            const iconKey = item.iconName || itemAny.iconname || 'Code2';
+            const Icon = iconMap[iconKey] || Code2;
+            const colSpanClass = item.colSpan || itemAny.colspan || 'lg:col-span-6';
+            const borderColorClass = item.borderColor || itemAny.bordercolor || 'group-hover:border-cyan-500/40';
+            const accentColorClass = item.accentColor || itemAny.accentcolor || 'text-cyan-400';
+
             return (
               <div
                 key={item.id}
                 onClick={() => onSelectService && onSelectService(item.title)}
-                className={`group relative rounded-3xl p-8 bg-slate-50 dark:bg-[#0F1420]/70 border border-slate-200 dark:border-white/10 ${
-                  item.borderColor || 'group-hover:border-cyan-500/40'
-                } ${item.colSpan || 'lg:col-span-6'} transition-all duration-300 hover:-translate-y-1.5 cursor-pointer flex flex-col justify-between overflow-hidden`}
+                className={`group relative rounded-3xl p-8 bg-slate-50 dark:bg-[#0F1420]/70 border border-slate-200 dark:border-white/10 ${borderColorClass} ${colSpanClass} transition-all duration-300 hover:-translate-y-1.5 cursor-pointer flex flex-col justify-between overflow-hidden`}
               >
                 {/* Ambient Glow */}
                 <div
@@ -81,7 +111,7 @@ const Services: React.FC<ServicesProps> = ({ items = defaultServiceItems, onSele
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
                     {item.title}
                   </h3>
-                  <p className={`text-xs font-semibold ${item.accentColor || 'text-cyan-400'} mb-4`}>
+                  <p className={`text-xs font-semibold ${accentColorClass} mb-4`}>
                     {item.tagline}
                   </p>
                   <p className="text-sm text-slate-600 dark:text-gray-400 leading-relaxed mb-6">
@@ -91,7 +121,7 @@ const Services: React.FC<ServicesProps> = ({ items = defaultServiceItems, onSele
 
                 <div className="pt-6 border-t border-slate-200/80 dark:border-white/5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {item.features.map((feature, i) => (
+                    {(item.features || []).map((feature, i) => (
                       <div key={i} className="flex items-center gap-2 text-xs text-slate-700 dark:text-gray-300">
                         <CheckCircle2 className="w-3.5 h-3.5 text-cyan-500 flex-shrink-0" />
                         <span>{feature}</span>
