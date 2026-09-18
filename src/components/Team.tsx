@@ -1,5 +1,6 @@
 import React from 'react';
 import { Linkedin, Twitter, Github, Sparkles, Award, ShieldCheck, ArrowUpRight } from 'lucide-react';
+import nipunImage from './mee.jpeg';
 
 const Team: React.FC = () => {
   return (
@@ -31,18 +32,16 @@ const Team: React.FC = () => {
             <div className="absolute -right-20 -top-20 w-72 h-72 bg-gradient-to-br from-cyan-500/20 via-teal-500/10 to-transparent blur-3xl group-hover:scale-125 transition-transform duration-500 pointer-events-none" />
 
             <div className="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-8 text-center sm:text-left">
-              {/* Avatar / Monogram */}
+              {/* Avatar / Portrait Image */}
               <div className="relative flex-shrink-0">
                 <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-tr from-cyan-500 via-teal-400 to-indigo-600 p-[2px] shadow-glow-cyan group-hover:scale-105 transition-transform duration-300">
-                  <div className="w-full h-full bg-slate-100 dark:bg-[#0A0D14] rounded-[22px] flex items-center justify-center">
-                    <span className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-wider">
-                      NH
-                    </span>
+                  <div className="w-full h-full bg-slate-100 dark:bg-[#0A0D14] rounded-[22px] overflow-hidden">
+                    <img
+                      src={nipunImage}
+                      alt="Nipun Harsh"
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
-                </div>
-                <div className="absolute -bottom-2.5 left-1/2 sm:left-auto sm:-right-2 -translate-x-1/2 sm:translate-x-0 px-3 py-1 rounded-full bg-white dark:bg-[#07090E] border border-slate-200 dark:border-white/10 text-[11px] font-bold text-teal-600 dark:text-teal-400 flex items-center gap-1.5 shadow-md whitespace-nowrap">
-                  <Sparkles className="w-3 h-3 text-cyan-400" />
-                  Founder & Principal
                 </div>
               </div>
 
